@@ -8,14 +8,13 @@ public class StudentManager {
     static  int number=0;
     int choice;
 
-    public void App()
-    {
-        while(true)
-        {
+    //public void App() 1.1错误
+    public void app() {
+        while (true) {
             display();
-            choice=scanner.nextInt();
-            if(choice==6)break;
-            switch(choice) {
+            choice = scanner.nextInt();
+            if (choice == 6) break;
+            switch (choice) {
                 case 1:
                     add();
                     break;//添加学生信息
@@ -34,8 +33,10 @@ public class StudentManager {
                 case 6:
                     break;
             }
-        }
-    }
+            //}2.3错误
+        }//while
+    //}2.3错误
+    }//app
 
     static void display()
     {
@@ -51,8 +52,8 @@ public class StudentManager {
         System.out.println("***************************************");
     }
 
-    static void add()
-    {//添加学生信息
+    static void add()//添加学生信息 case 1
+    {//添加学生信息 2.1错误
         System.out.println("点击任意键继续添加学生信息");
         System.out.println("请输入该学生的学号，姓名，出生日期，性别");
         stu[number]=new Stu();
@@ -65,16 +66,16 @@ public class StudentManager {
         System.out.println("添加成功");
     }
 
-    static void show()
-    {//展示学生信息
+    static void show()//展示学生信息 case 5
+    {//展示学生信息 2.1错误
         System.out.println("这些学生的学号，姓名，出生日期，性别分别为");
         for(int i=0;i<number;i++)
             System.out.println(stu[i].getID()+"\t"+stu[i].getName()+"\t"+stu[i].getBirDate()+"\t"+stu[i].getGender());
         System.out.println();
     }
 
-    static void sort()
-    {//对学生信息进行排序
+    static void sort()//对学生信息进行排序
+    {//对学生信息进行排序 2.1错误
         int j;
         Stu temp=new Stu();
         for(int i=0;i<number;i++)
@@ -86,9 +87,8 @@ public class StudentManager {
         System.out.println("排序完成，选择”学生信息查看“进行查看");
     }
 
-
-    static void change()
-    {//改变学生信息
+    static void change()//改变学生信息 case 4
+    {//改变学生信息 2.1
         System.out.println("请输入要修改信息的学生姓名");
         String stuname=scanner.next();
         for(int i=0;i<number;i++)
@@ -106,8 +106,8 @@ public class StudentManager {
 
     }
 
-    static void query()
-    {//查询
+    static void query()//查询学生信息 case 2
+    {//查询 2.1
         System.out.println("请输入要查询的学生姓名");
         String Stuname=scanner.next();
         int i;
@@ -122,8 +122,8 @@ public class StudentManager {
         if(number==i)System.out.println("对不起查无此人");
     }
 
-    static void delete()
-    {//删除学生信息
+    static void delete() //删除学生信息 case 3
+    {//删除学生信息 2.1
         System.out.println("请输入要删除信息的学生姓名");
         String stuname=scanner.next();
         int i;
